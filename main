@@ -11,12 +11,12 @@
 
 set -e
 
-mkdir -p out_dir
+mkdir -p t1_brain
 
 export SINGULARITYENV_LC_ALL=C.UTF-8
 export SINGULARITYENV_LANG=C.UTF-8
 
 singularity exec -e docker://brainlife/fsl:6.0.4-patched2 bash run_bet.sh
 
-[ -z "$(ls -A out_dir)" ] && echo "no output produced" && exit 1
+[ -z "$(ls -A t1_brain)" ] && echo "no output produced in t1_brain/" && exit 1
 exit 0
